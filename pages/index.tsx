@@ -1,12 +1,15 @@
 import { Container, Flex, VStack } from "@chakra-ui/react";
 import Cart from "./src/sections/cart";
 import Details from "./src/sections/details";
-
-//current lesson: 5 implement responsive design in chakra ui
+import { base } from "framer-motion/client";
 
 const IndexPage = () => (
   <Container maxWidth="container.xl" padding={0}>
-    <Flex height="100vh" py={20}>
+    <Flex
+      height={{ base: "auto", md: "100vh" }}
+      py={[0, 10, 20]}
+      direction={{ base: "column-reverse", md: "row" }}
+    >
       <Details />
       <Cart />
     </Flex>
